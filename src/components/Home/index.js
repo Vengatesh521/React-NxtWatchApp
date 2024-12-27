@@ -2,6 +2,7 @@ import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import './index.css'
+import Header from '../Header'
 
 class Home extends Component {
   state = {
@@ -65,7 +66,7 @@ class Home extends Component {
             <div className="video-info">
               <img
                 src={video.channel.profile_image_url}
-                alt="channel logo"
+                alt="profile"
                 className="channel-logo"
               />
               <div>
@@ -88,9 +89,14 @@ class Home extends Component {
 
   renderFailureView = () => (
     <div className="failure-view-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
+        alt="failure view"
+        className="failure-view-image"
+      />
       <h1>Oops! Something Went Wrong</h1>
       <p>
-        We are having some trouble to complete your request. Please try again.
+        We are having some trouble completing your request. Please try again.
       </p>
       <button type="button" onClick={this.fetchVideos} className="retry-button">
         Retry
@@ -100,6 +106,11 @@ class Home extends Component {
 
   renderEmptyView = () => (
     <div className="no-videos-view">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
+        alt="no videos"
+        className="no-videos-image"
+      />
       <h1>No Search Results Found</h1>
       <p>Try different keywords or remove filters</p>
     </div>
@@ -121,40 +132,35 @@ class Home extends Component {
 
   render() {
     const {isLoading, searchQuery} = this.state
-    const {history}=this.props
+
     return (
-      <div className="home-container">
-        <header className="header">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            alt="website logo"
-            className="website-logo"
-            onClick={() =>history.replace('/')}
-          />
-        </header>
-        <div className="search-container">
-          <input
-            type="search"
-            placeholder="Search"
-            value={searchQuery}
-            onChange={this.onChangeSearchInput}
-            className="search-input"
-          />
-          <button
-            type="button"
-            className="search-button"
-            onClick={this.onClickSearchButton}
-          >
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-search-icon.png"
-              alt="search icon"
+      <>
+        <Header />
+        <div className="home-container">
+          <div className="search-container">
+            <input
+              type="search"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={this.onChangeSearchInput}
+              className="search-input"
             />
-          </button>
+            <button
+              type="button"
+              className="search-button"
+              onClick={this.onClickSearchButton}
+            >
+              <img
+                src="https://fonts.gstatic.com/s/i/materialicons/search/v4/24px.svg"
+                alt="search icon"
+              />
+            </button>
+          </div>
+          <div className="videos-container">
+            {isLoading ? this.renderLoader() : this.renderContent()}
+          </div>
         </div>
-        <div className="videos-container">
-          {isLoading ? this.renderLoader() : this.renderContent()}
-        </div>
-      </div>
+      </>
     )
   }
 }

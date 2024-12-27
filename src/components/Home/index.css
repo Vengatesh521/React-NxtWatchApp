@@ -1,0 +1,107 @@
+.home-container {
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.videos-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.videos-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-info {
+  display: flex;
+  margin-top: 10px;
+}
+
+.channel-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.channel-name {
+  font-size: 14px;
+  color: #757575;
+}
+
+.video-details {
+  font-size: 12px;
+  color: #9e9e9e;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.failure-view-container {
+  text-align: center;
+}
+
+.failure-view-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.retry-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #0b69ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.no-videos-view {
+  text-align: center;
+}
+
+.no-videos-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
