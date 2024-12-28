@@ -1,10 +1,23 @@
+import {useState} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 
 import './index.css'
 
 const Header = props => {
+  const [isLogoutPopupOpen, setLogoutPopupOpen] = useState(false)
+
   const onClickLogout = () => {
+    setLogoutPopupOpen(true)
+  }
+
+  const handleCancel = () => {
+    setLogoutPopupOpen(false)
+  }
+
+  const handleConfirm = () => {
     const {history} = props
     Cookies.remove('jwt_token')
     history.replace('/login')
@@ -99,6 +112,30 @@ const Header = props => {
           </li>
         </ul>
       </div>
+
+      {/* Popup for Logout Confirmation */}
+      <Popup
+        open={isLogoutPopupOpen}
+        closeOnDocumentClick={false}
+        onClose={() => setLogoutPopupOpen(false)}
+        modal
+      >
+        <div className="popup-content">
+          <h3>Are you sure you want to logout?</h3>
+          <div className="popup-actions">
+            <button type="button" onClick={handleCancel} className="cancel-btn">
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={handleConfirm}
+              className="confirm-btn"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </Popup>
     </nav>
   )
 }
