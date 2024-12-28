@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import './index.css'
@@ -58,25 +59,27 @@ class Home extends Component {
     return (
       <ul className="videos-list">
         {videos.map(video => (
-          <li key={video.id} className="video-item">
-            <img
-              src={video.thumbnail_url}
-              alt="video thumbnail"
-              className="thumbnail"
-            />
-            <div className="video-info">
+          <Link to={`/videos/${video.id}`}>
+            <li key={video.id} className="video-item">
               <img
-                src={video.channel.profile_image_url}
-                alt="profile"
-                className="channel-logo"
+                src={video.thumbnail_url}
+                alt="video thumbnail"
+                className="thumbnail"
               />
-              <div>
-                <p className="video-title">{video.title}</p>
-                <p className="channel-name">{video.channel.name}</p>
-                <p className="video-details">{`${video.view_count} • ${video.published_at}`}</p>
+              <div className="video-info">
+                <img
+                  src={video.channel.profile_image_url}
+                  alt="profile"
+                  className="channel-logo"
+                />
+                <div>
+                  <p className="video-title">{video.title}</p>
+                  <p className="channel-name">{video.channel.name}</p>
+                  <p className="video-details">{`${video.view_count} • ${video.published_at}`}</p>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     )

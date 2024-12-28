@@ -5,11 +5,11 @@ import './index.css'
 import Header from '../Header'
 import RouteHeader from '../RouteHeader'
 
-class Home extends Component {
+class Gaming extends Component {
   state = {
     videos: [],
     isLoading: false,
-    searchQuery: '',
+
     apiStatus: 'INITIAL', // 'SUCCESS', 'FAILURE', 'EMPTY'
   }
 
@@ -19,9 +19,9 @@ class Home extends Component {
 
   fetchVideos = async () => {
     this.setState({isLoading: true, apiStatus: 'INITIAL'})
-    const {searchQuery} = this.state
+
     const jwtToken = Cookies.get('jwt_token')
-    const url = `https://apis.ccbp.in/videos/all?search=${searchQuery}`
+    const url = `https://apis.ccbp.in/videos/gaming`
     const options = {
       method: 'GET',
       headers: {
@@ -45,14 +45,6 @@ class Home extends Component {
     }
   }
 
-  onChangeSearchInput = event => {
-    this.setState({searchQuery: event.target.value})
-  }
-
-  onClickSearchButton = () => {
-    this.fetchVideos()
-  }
-
   renderVideos = () => {
     const {videos} = this.state
     return (
@@ -65,15 +57,10 @@ class Home extends Component {
               className="thumbnail"
             />
             <div className="video-info">
-              <img
-                src={video.channel.profile_image_url}
-                alt="profile"
-                className="channel-logo"
-              />
               <div>
                 <p className="video-title">{video.title}</p>
-                <p className="channel-name">{video.channel.name}</p>
-                <p className="video-details">{`${video.view_count} • ${video.published_at}`}</p>
+
+                <p className="video-details">{`${video.view_count} Watching Worldwide`}</p>
               </div>
             </div>
           </li>
@@ -132,41 +119,28 @@ class Home extends Component {
   }
 
   render() {
-    const {isLoading, searchQuery} = this.state
+    const {isLoading} = this.state
 
     return (
       <>
         <Header />
-        <>
+        <div className="container">
           <RouteHeader />
           <div className="home-container">
-            <div className="search-container">
-              <input
-                type="search"
-                placeholder="Search"
-                value={searchQuery}
-                onChange={this.onChangeSearchInput}
-                className="search-input"
-              />
-              <button
-                type="button"
-                className="search-button"
-                onClick={this.onClickSearchButton}
-              >
-                <img
-                  src="https://fonts.gstatic.com/s/i/materialicons/search/v4/24px.svg"
-                  alt="search icon"
-                />
-              </button>
-            </div>
+            <img
+              src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/chart-line.svg"
+              alt="nav gaming"
+              className="nav-bar-img"
+            />
+            <h1>Gaming</h1>
             <div className="videos-container">
               {isLoading ? this.renderLoader() : this.renderContent()}
             </div>
           </div>
-        </>
+        </div>
       </>
     )
   }
 }
 
-export default Home
+export default Gaming

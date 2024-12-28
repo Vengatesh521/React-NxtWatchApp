@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import {FaFire, FaGamepad, FaBookmark} from 'react-icons/fa'
 import './index.css'
 
 const RouteHeader = () => (
@@ -16,31 +17,19 @@ const RouteHeader = () => (
       </div>
       <div>
         <Link to="/trending" className="nav-link">
-          <img
-            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/chart-line.svg"
-            alt="nav trending"
-            className="nav-bar-img"
-          />
+          <FaFire className="nav-icon" />
           Trending
         </Link>
       </div>
       <div>
         <Link to="/gaming" className="nav-link">
-          <img
-            src="https://www.flaticon.com/svg/static/icons/svg/1237/1237113.svg"
-            alt="nav gaming"
-            className="nav-bar-img"
-          />
+          <FaGamepad className="nav-icon" />
           Gaming
         </Link>
       </div>
       <div>
         <Link to="/saved-videos" className="nav-link">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-saved-videos-icon.png"
-            alt="nav saved videos"
-            className="nav-bar-img"
-          />
+          <FaBookmark className="nav-icon" />
           Saved Videos
         </Link>
       </div>
