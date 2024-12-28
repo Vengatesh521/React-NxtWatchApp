@@ -1,8 +1,5 @@
 .home-container {
   padding: 20px;
-  max-height: 90vh;
-  flex-wrap: wrap;
-  overflow-y: auto;
 }
 
 .search-container {
@@ -107,8 +104,4 @@
   width: 200px;
   height: auto;
   margin-bottom: 20px;
-}
-.container {
-  display: flex;
-  flex-direction: row;
 }

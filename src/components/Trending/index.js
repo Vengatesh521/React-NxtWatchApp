@@ -137,7 +137,7 @@ class Home extends Component {
     return (
       <>
         <Header />
-        <div className="container">
+        <>
           <RouteHeader />
           <div className="home-container">
             <div className="search-container">
@@ -163,7 +163,7 @@ class Home extends Component {
               {isLoading ? this.renderLoader() : this.renderContent()}
             </div>
           </div>
-        </div>
+        </>
       </>
     )
   }

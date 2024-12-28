@@ -1,0 +1,63 @@
+.route-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 250px;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+  height: 90vh;
+  box-sizing: border-box;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1e293b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-bar-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.nav-link:hover {
+  color: #0b69ff;
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: auto;
+}
+
+.contact-section h1 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+
+.contact-section p {
+  font-size: 14px;
+  color: #475569;
+  font-family: 'Roboto', sans-serif;
+}
