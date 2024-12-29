@@ -130,7 +130,10 @@ class VideoItemDetails extends Component {
         <Header />
         <div className="container">
           <RouteHeader />
-          <div className="video-details-container">
+          <div
+            data-testid="VideoItemDetails"
+            className="video-details-container"
+          >
             <ReactPlayer
               url={videoUrl}
               className="video-player"

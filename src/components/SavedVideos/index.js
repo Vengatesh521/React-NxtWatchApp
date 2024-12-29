@@ -80,7 +80,7 @@ class SavedVideos extends Component {
         <Header />
         <div className="container">
           <RouteHeader />
-          <div className="saved-videos-container">
+          <div data-testid="savedVideos" className="saved-videos-container">
             <FaBookmark className="nav-icon" />
             <h1>Saved Videos</h1>
             {isLoading ? this.renderLoader() : this.renderSavedVideos()}

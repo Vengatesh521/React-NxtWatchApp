@@ -135,7 +135,7 @@ class Trending extends Component {
         <Header />
         <div className="container">
           <RouteHeader />
-          <div className="home-container">
+          <div data-testid="trending" className="home-container">
             <FaFire className="nav-icon" />
             <h1>Trending</h1>
             <div className="videos-container">

@@ -126,7 +126,7 @@ class Gaming extends Component {
         <Header />
         <div className="container">
           <RouteHeader />
-          <div className="home-container">
+          <div data-testid="gaming" className="home-container">
             <img
               src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/chart-line.svg"
               alt="nav gaming"

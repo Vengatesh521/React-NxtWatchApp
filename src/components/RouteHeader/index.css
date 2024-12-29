@@ -61,3 +61,24 @@
   color: #475569;
   font-family: 'Roboto', sans-serif;
 }
+.nav-link {
+  text-decoration: none;
+  color: #1e293b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  color: #0b69ff;
+}
+
+.nav-link.active {
+  background-color: #cc461d; /* Active tab background color */
+  color: #ffffff; /* Active tab text color */
+}
