@@ -33,7 +33,7 @@ class SavedVideos extends Component {
             alt="no saved videos"
             className="no-videos-image"
           />
-          <h1>No Saved Videos</h1>
+          <h1>No saved videos found</h1>
         </div>
       )
     }

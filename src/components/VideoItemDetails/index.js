@@ -141,7 +141,7 @@ class VideoItemDetails extends Component {
               controls
             />
             <div className="video-info">
-              <h1 className="video-title">{title}</h1>
+              <p className="video-title">{title}</p>
               <div className="video-meta">
                 <p>{viewCount} views</p>
                 <p>Published on {publishedAt}</p>
@@ -178,7 +178,7 @@ class VideoItemDetails extends Component {
                 alt={channel.name}
               />
               <div>
-                <h2 className="channel-name">{channel.name}</h2>
+                <p className="channel-name">{channel.name}</p>
                 <p className="subscriber-count">
                   {channel.subscriber_count} subscribers
                 </p>
